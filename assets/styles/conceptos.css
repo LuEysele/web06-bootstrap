@@ -5,3 +5,8 @@
 .box-col {
     border: 2px solid green;
 }
+
+.box-section {
+    min-height: 300px;
+    border: 2px solid purple;
+}
