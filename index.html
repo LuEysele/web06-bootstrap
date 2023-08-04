@@ -8,16 +8,14 @@
     <title>Página en construcción</title>
     <script>
         console.log("Página en construcción");
-        const date = new Date();
-        console.log(date);
     </script>
 </head>
 
 <body>
     <main class="container-fluid text center bg-black text-light">
-        <div class="row align-items-center justify-content-center" style="height: 100vh;">
+        <div class="row align-items-center justify-content-center" style="height: 80vh;">
             <div class="col-10 col-md-6 col-lg-8">
-                <img onclick="clickPatricio()" class="img-fluid rounded" src="./assets/img/link.jpg" alt="Patricio estrella construyendo">
+                <img onclick="clickPatricio()" class="img-fluid rounded" src="./assets/img/link.jpg" alt="Link echándole corazones a la página">
             </div>
             <div class="col-10 col-md-6 col-lg-4">
                 <h2>Página en construcción</h2>
@@ -27,16 +25,25 @@
 
     </main>
     <footer class="container-fluid text-center">
-        <div class="row align-items-center justify-content-center" style="height: 20vh;">
-            <div class="col-4">
-                <h3 onclick="changeColor(this, 'green')">Cambia mi color a verde</h3>
+        <div class="row align-items-center justify-content-center" style="height: 15vh;">
+            <div class="col-6 col-md-3">
+                <h3 id="green-color" onclick="changeColor(this, 'green')">Cambia mi color a verde</h3>
             </div>
-            <div class="col-4">
-                <h3 onclick="changeColor(this, 'red')">Cambia mi color a rojo</h3>
+            <div class="col-6 col-md-3">
+                <h3 id="red-color" onclick="changeColor(this, 'red')">Cambia mi color a rojo</h3>
             </div>
-            <div class="col-4">
-                <h3 onclick="changeColor(this, 'purple')">Cambia mi color a morado</h3>
+            <div class="col-6 col-md-3">
+                <h3 id="purple-color" onclick="changeColor(this, 'purple')">Cambia mi color a morado</h3>
             </div>
+            <div class="col-6 col-md-3">
+                <h3 id="user-color" onclick="changeColorWithPrompt(this)">Cambia mi color al que tú desees.</h3>
+            </div>
+    
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-5">
+            <button onclick="resetColor()" type="button" class="btn btn-dark">Reiniciar</button> 
+        </div>
         </div>
 <!-- Hacer un div que te pregunte el color y cambie el texto a ese color -->
     </footer>
