@@ -34,3 +34,11 @@ function resetColor() {
     changeColor(refuserColor, 'black');
     changeTextOfUserColor( refuserColor, 'black');
 }
+
+function insertName(){
+    const name = prompt("Inserta tu nombre");
+    document.getElementById("nombreIn").innerHTML ="<h3>¡Hola, " + name + "!</h3>";
+
+
+}
+
