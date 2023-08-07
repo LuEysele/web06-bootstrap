@@ -77,3 +77,52 @@ const myObj = {
 }
 console.log(myObj);
 
+//-------------Objetos en JavaScript
+// tipo de dato Array
+const cancionesCh30 = ["Highway Star", "Trouble", "Saoko", "Rock DJ"];
+
+// tipos de datos Object
+const misDatosDePerfil = {
+    name : "Sergio",
+    lastname : "Torres",
+    age: 39,
+    isBelicoso: false,
+    fullName : function(){
+        return `Nombre completo de Sergh: ${this.name} ${this.lastname}`;
+    },
+    // agregar una función que muestre el nombre completo en mayúsculas
+    fullNameUp : function(){
+        return this.fullName().toUpperCase();
+    }
+}
+
+console.log(misDatosDePerfil);
+console.table(misDatosDePerfil);
+console.log( misDatosDePerfil.fullName ); // imprime la función xd
+console.log( misDatosDePerfil.fullName() ); //Sergio Torres
+console.log( misDatosDePerfil.fullNameUp() ); //SERGIO TORRES
+
+
+// --------------------------------------------
+//Conversión explícita de datos
+const horaDescanso = 13.05;
+console.log ( "Hora Descanso: " + horaDescanso + "h."); // concatenación
+const horaDescansoTxt = String( horaDescanso);
+console.log ( "Hora Descanso: " + horaDescansoTxt + "h."); // concatenación
+console.log("Hora de retorno: "+ horaDescanso + .15); //13.050.15
+
+const colorVerde = 0x008000;
+console.log(`El valor RGB del color verde es:  ${colorVerde}`); // 32768
+console.log(`El valor RGB del color verde es:  ${colorVerde.toString()}`); // 32768
+console.log(`El valor RGB del color verde es:  ${colorVerde.toString(16)}`); // 8000, aquí se le indica la base a la cual queremos que nos lo represente
+console.log(`El valor RGB del color verde es:  ${colorVerde.toString(16).padStart(6, "0")}`); // 008000
+
+//Conversión a Number
+const myAgeTxt = "25";
+const sumatoria = 10 + myAgeTxt;
+console.log(`Valor de la sumatoria ${sumatoria}`); //1025
+
+console.log(`Valor de la sumatoria ${10 + Number(myAgeTxt)}`); //35
+console.log(`Valor de la sumatoria ${10 + parseInt(myAgeTxt)}`); //35
+console.log(`Valor de la sumatoria ${10 + parseFloat(myAgeTxt)}`); //35
+console.log(`Valor de la sumatoria ${10 + (+myAgeTxt)}`); //35
