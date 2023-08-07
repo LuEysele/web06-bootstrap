@@ -118,7 +118,7 @@ console.log(`El valor RGB del color verde es:  ${colorVerde.toString(16)}`); // 
 console.log(`El valor RGB del color verde es:  ${colorVerde.toString(16).padStart(6, "0")}`); // 008000
 
 //Conversión a Number
-const myAgeTxt = "25";
+const myAgeTxt = "25.05";
 const sumatoria = 10 + myAgeTxt;
 console.log(`Valor de la sumatoria ${sumatoria}`); //1025
 
@@ -126,3 +126,16 @@ console.log(`Valor de la sumatoria ${10 + Number(myAgeTxt)}`); //35
 console.log(`Valor de la sumatoria ${10 + parseInt(myAgeTxt)}`); //35
 console.log(`Valor de la sumatoria ${10 + parseFloat(myAgeTxt)}`); //35
 console.log(`Valor de la sumatoria ${10 + (+myAgeTxt)}`); //35
+
+//Diferencias entre usar Number() y parseInt()
+// - Number convierte enteros y decimales
+// - parseInt convierte solo la parte entera
+console.log(parseInt(100.567)); //100
+// - Number devuelve Nan si la cadena contiene algún carácter no numérico
+// - parseInt convierte los enteros hasta encontrar un carácter no numérico
+// -          si la entrada no comienza con un valor numérico, devuelve NaN
+console.log( Number("123 - 456")); // NaN
+console.log( parseInt("123 - 456")); // 123
+console.log( parseInt("$123 - 456")); // NaN
+console.log( Number(true)); // 1
+console.log( parseInt( true)); // NaN
