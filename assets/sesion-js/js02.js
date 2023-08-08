@@ -229,3 +229,28 @@ function getCoursesWithFilter( array1Courses ){
 }
 console.log(`Comúnxpartes: ${getCoursesWithFilter(student1Courses, student2Courses)}`);
 
+//---------- Contar la cantidad de caracteres de una frase ---------
+/* 
+"peso pluma pica papas con un pico y una pala con un pico pica papas peso pluma"
+
+mostrar la cantidad de letras 'p'
+usar funciones flecha.
+
+recomendación de métodos: split, filter.
+*/
+const dobleP = "peso pluma pica papas con un pico y una pala con un pico pica papas peso pluma";
+
+const counterCharacterUnsensitive = ( phase, character ) => phase.toLowerCase().split(character).length-1;
+
+console.log(dobleP.split("p").length-1);
+
+const contarLetrasP = (frase) => {
+    const letrasP = frase.split('').filter(letra => letra === 'p' || letra === 'P');
+    return letrasP.length;
+  };
+
+const counterCharacter = (phrase, character) => phrase.split(character).length-1
+console.log(`Cantidad de letras p : ${counterCharacter(dobleP, "p")}`)
+console.log(`Cantidad de letras p : ${counterCharacter(dobleP, "p") + counterCharacter(dobleP, "P")}`);
+console.log(`Cantidad de letras 'p' : ${ counterCharacterUnsensitive(dobleP, "p") } `); // 13
+console.log(`Cantidad de letras p (Mau) : ${contarLetrasP(dobleP)}`)
