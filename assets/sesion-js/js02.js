@@ -204,3 +204,28 @@ function cursosEnComun( student1Courses, student2Courses ){
     return `Cursos en comúm: ${commonCourses}`
 }
 console.log(cursosEnComun( student1Courses, student2Courses ));
+
+
+//----------------- Resolviendo con filter e include -------------------
+
+function getCommonCoursesWithFilter( array1Courses, array2Courses){
+    return array1Courses.filter ( course => array2Courses.includes(course));
+}
+
+console.log(`Común: ${getCommonCoursesWithFilter( student1Courses, student2Courses)}`)
+
+
+//----------------- Resolviendo con filter e include por partes ---------------
+
+console.log("#########################################")
+function includeCourse( course, index, array ){
+    console.log(`Elemento ${course}, índice ${index}, include ${student2Courses.includes(course)}`)
+    return student2Courses.includes(course); // evaluación
+}
+
+function getCoursesWithFilter( array1Courses ){
+    const commonCourses = array1Courses.filter(includeCourse );
+    return commonCourses
+}
+console.log(`Comúnxpartes: ${getCoursesWithFilter(student1Courses, student2Courses)}`);
+
