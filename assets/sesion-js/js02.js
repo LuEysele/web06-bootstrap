@@ -254,3 +254,35 @@ console.log(`Cantidad de letras p : ${counterCharacter(dobleP, "p")}`)
 console.log(`Cantidad de letras p : ${counterCharacter(dobleP, "p") + counterCharacter(dobleP, "P")}`);
 console.log(`Cantidad de letras 'p' : ${ counterCharacterUnsensitive(dobleP, "p") } `); // 13
 console.log(`Cantidad de letras p (Mau) : ${contarLetrasP(dobleP)}`)
+
+//-------------- Recursividad ---------------
+/* 
+Una función que se llama a sí misma durante su ejecución
+
+Se utilizan en algoritmos y soluciones que se basan en la división y conquista
+como cálculos matemáticos, recorrido de estructura de datos y algoritmos de 
+búsqueda y ordenamiento
+
+Patrón:
+  function nombreFuncionRecursiva( parametro ){
+    if( condicionParo){
+        return expresión;
+    }
+    else {
+        // llamada recursiva
+        nombreFuncionRecursiva( nuevoParametro );
+    }
+  }
+*/
+
+//------- Cálculo del factorial de un número usando ciclo for ---------
+
+function factorial(num){
+    let fact = 1;
+    for (let i = 0; i <= num; i++) {
+    fact = fact * i;   
+    }
+    return fact;
+}
+
+console.log(`El factorial de 5 es: ${factorial(5)}`)
