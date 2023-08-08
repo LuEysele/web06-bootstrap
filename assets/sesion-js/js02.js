@@ -279,10 +279,49 @@ Patrón:
 
 function factorial(num){
     let fact = 1;
-    for (let i = 0; i <= num; i++) {
-    fact = fact * i;   
+    for (let i = 1; i <= num; i++) {
+    fact *= i;   
     }
     return fact;
 }
 
 console.log(`El factorial de 5 es: ${factorial(5)}`)
+
+function factRecursivo ( num ) {
+    if (num === 1) {
+        return 1;
+    } else {
+        console.log(`${num} * ${num - 1}`);
+        return num * factRecursivo( num - 1);
+    }
+}
+
+console.log(`El factorial recursivo de 5 es: ${factRecursivo(5)}`);
+
+//----------------- Saludar con recursividad ----------------
+/* 
+ Generar una función recursiva que muestre en consola un saludo
+ donde se indique el número saludo deseado
+
+ ej. saludar 10 veces
+
+ Saludo 1
+ Saludo 2
+ Saludo 3
+ ...
+ Saludo 9
+ Saludo 10
+
+*/
+
+function saludoz( numeroSaludo){
+    if( numeroSaludo === 1){
+        return `Saludo ${numeroSaludo}`;
+    }
+    else {
+        // llamada recursiva
+        console.log(`Saludo ${numeroSaludo}`)
+        return saludoz( numeroSaludo - 1 );
+    }
+}
+console.log(saludoz(10));
