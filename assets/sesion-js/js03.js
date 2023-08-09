@@ -248,7 +248,25 @@ console.log(`El usuario ${msj}`)
  si no cumple con la condición "El usuario no es mayor de edad"
 */
 
-const ageOf = parseInt(prompt("Ingresa tu edad", 18));
+//const ageOf = parseInt(prompt("Ingresa tu edad", 18));
 
-const esMayor = ageOf >= 18 ? "" : " no";
-console.log(`El usuario${esMayor} es mayor de edad`);
+//const esMayor = ageOf >= 18 ? "" : " no";
+//console.log(`El usuario${esMayor} es mayor de edad`);
+
+//--------- Cálculo de factorial recursivo con operador ternario-----------------
+/* 
+function factRecursivo ( num ) {
+    if (num === 1) {
+        return 1;
+    } else {
+        console.log(`${num} * ${num - 1}`);
+        return num * factRecursivo( num - 1);
+    }
+}
+*/
+
+const factRecursivo = (num = 1) => num === 0 ? 1: num * factRecursivo( num - 1);
+console.log(`El factorial recursivo es: ${factRecursivo(0)}`);
+ 
+
+
