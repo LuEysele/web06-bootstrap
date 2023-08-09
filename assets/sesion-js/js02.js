@@ -324,4 +324,17 @@ function saludoz( numeroSaludo){
         return saludoz( numeroSaludo - 1 );
     }
 }
-console.log(saludoz(10));
+saludoz(10);
+
+// ------- Refactorizado -----------
+function salu2( numeroSaludo){
+    if( numeroSaludo > 1){
+        salu2(numeroSaludo - 1)
+        console.log(`Saludo ${numeroSaludo}`);
+    }
+    else {
+        // llamada recursiva
+        console.log(`Saludo ${numeroSaludo}`);
+    }
+}
+salu2(10);
