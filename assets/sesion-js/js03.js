@@ -158,3 +158,81 @@ console.log(`La velocidad del ventilador está en ${setVelocidadVentilador(8)}`)
 console.log(`La velocidad del ventilador está en ${setVelocidadVentilador(2)}`); // media
 console.log(`La velocidad del ventilador está en ${setVelocidadVentilador("2")}`); // media
 console.log(`La velocidad del ventilador está en ${setVelocidadVentilador()}`); // apagado
+
+//console.log(`La velocidad del ventilador está en ${setVelocidadVentilador(prompt("Velocidad", 1))}`); // velocidad baja
+
+//--------------- Estaciones del año ---------------
+/* 
+ Preguntar por el número de mes (promt o DOM), del 1 al 12
+ Desplegar de acuerdo al mes un Alert (mostrarlo en el DOM) la estación del año.
+ mes 12, 1, 2 = invierno.
+ mes 3, 4, 5 = primavera.
+ mes 6, 7, 8 = verano.
+ mes 9, 10, 11 = otoño.
+
+
+Realizar una versión con if-else-elseif y otra con switch.
+
+*/
+// ----- VERSIÓN IF ---------
+function seasonsIf(){
+    const number = parseInt(prompt());
+    const invierno = number == 1 || number == 2 || number == 12;
+    const primavera = number == 3 || number == 4 || number == 5;
+    const verano = number == 6 || number == 7 || number == 8;
+    const otoño = number == 9 || number == 10 || number == 11;
+    if(invierno){
+        alert("invierno");
+    } else if(primavera){
+        alert("primavera");
+    } else if(verano){
+        alert("verano");
+    } else if(otoño){
+        alert("otoño")
+    }
+
+}
+
+//-------- VERSIÓN SWITCH -----------
+function monthOfTheYear() {
+    const mes = parseInt(prompt("Ingresa el mes:"));
+    switch (mes ){
+        case 12:
+        case 1:
+        case 2:
+            alert("invierno"); break;
+        case 3:
+        case 4:
+        case 5:
+            alert("primavera"); break;
+        case 6:
+        case 7:
+        case 8:
+            alert("verano"); break;
+        case 9:
+        case 10:
+        case 11:
+            alert("otoño"); break;
+        default:
+            alert("el mes indicado no existe"); break;
+    }
+}
+console.log(`El mes indicado es: ${monthOfTheYear(prompt("Ingresa el mes", 1))}`);
+
+// ------------------------ Operador ternario --------------------------
+/*
+ Es el único operador de JavaScript que tiene 3 operandos.
+ Generalmente se utiliza como opción a la sentencia if-else.
+
+ Sintaxis:
+  condición ? expresiónSiCondiciónEsVerdadera : expresionSiCondiciónEsFalsa; 
+
+*/
+
+const pagoTarjetaDeCredito = true;
+
+let msj;
+if (pagoTarjetaDeCredito === true) msj = "Ha realizado el pago de su TC.";
+else "No ha realizado el pago de su TC.";
+
+console.log(`El usuario ${msj}`)
