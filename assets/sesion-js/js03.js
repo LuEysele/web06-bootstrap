@@ -175,6 +175,7 @@ Realizar una versión con if-else-elseif y otra con switch.
 
 */
 // ----- VERSIÓN IF ---------
+/* 
 function seasonsIf(){
     const number = parseInt(prompt());
     const invierno = number == 1 || number == 2 || number == 12;
@@ -192,8 +193,9 @@ function seasonsIf(){
     }
 
 }
-
+ */
 //-------- VERSIÓN SWITCH -----------
+/* 
 function monthOfTheYear() {
     const mes = parseInt(prompt("Ingresa el mes:"));
     switch (mes ){
@@ -218,7 +220,7 @@ function monthOfTheYear() {
     }
 }
 console.log(`El mes indicado es: ${monthOfTheYear(prompt("Ingresa el mes", 1))}`);
-
+ */
 // ------------------------ Operador ternario --------------------------
 /*
  Es el único operador de JavaScript que tiene 3 operandos.
@@ -230,9 +232,23 @@ console.log(`El mes indicado es: ${monthOfTheYear(prompt("Ingresa el mes", 1))}`
 */
 
 const pagoTarjetaDeCredito = true;
-
+/* 
 let msj;
-if (pagoTarjetaDeCredito === true) msj = "Ha realizado el pago de su TC.";
-else "No ha realizado el pago de su TC.";
+if (pagoTarjetaDeCredito === true) msj = "ha realizado el pago de su TC.";
+else "no ha realizado el pago de su TC.";
+ */
+const msj = pagoTarjetaDeCredito === true ? "ha realizado el pago de su TC" : "no ha realizado el pago de su TC."
 
 console.log(`El usuario ${msj}`)
+
+// --------------- mini ejercicio -------------
+/* 
+ Preguntar con prompt la edad del usuario: 20
+ Se es >= 18 indicar en la consola "el usuario es mayor de edad"
+ si no cumple con la condición "El usuario no es mayor de edad"
+*/
+
+const ageOf = parseInt(prompt("Ingresa tu edad", 18));
+
+const esMayor = ageOf >= 18 ? "" : " no";
+console.log(`El usuario${esMayor} es mayor de edad`);
