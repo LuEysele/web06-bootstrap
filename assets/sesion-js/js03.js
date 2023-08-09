@@ -88,9 +88,75 @@ console.log(comidaFavorita); // pozole
 
 */
 
-const temperatura = 22;
-let mensaje = "Temperatura ideal de: ";
+const temperatura = 23;
+let mensaje = "Temperatura de: ";
 
 if (temperatura === 22){
-    mensaje += `${temperatura} °C`
+    mensaje += `${temperatura} °C, es ideal`;
 }
+else if (temperatura >= 15 && temperatura <= 21){
+    mensaje += `${temperatura} °C, es fría` ;
+}
+// rango de 23 a 30 -> es calurosa
+else if (temperatura >= 23 && temperatura <= 30){
+    mensaje += `${temperatura} °C, es calurosa` ;
+}
+else {
+    mensaje = `La temperatura de ${temperatura} °C, no es ideal`
+}
+
+console.log(mensaje);
+
+//------- Condicional switch -------------
+/* 
+ La condicional Switch evalúa una expresión y se compara
+ con el valor de cada instancia en 'case' y se ejecuta las
+ sentencias asociadas a ese 'case' hasta encontrar la
+ sentencia 'break' o se finalicen todas las sentencias de
+ la condicional switch
+ 
+ Sintaxis:
+    switch (expresion) {
+        case valor 1:
+            sentencia;
+            break;
+        case valor 2;
+            sentencia;
+            break;
+        case valor n;
+            sentencia;
+            break;
+        default:
+            sentencias;
+            break;
+    }
+
+*/
+
+/**
+ * Establece la velocidad de un ventilador
+ * @param {number} velocidad del ventilador
+ * @return {number} mensaje de la velocidad establecida del ventilador
+ */
+const setVelocidadVentilador = ( velocidad = 0 ) => {
+    let mensaje;
+    // la condicional switch utiliza la comparación estricta ( === )
+    switch( velocidad ){
+        case 0:
+            mensaje = "apagado"; break;
+        case 1:
+            mensaje = "velocidad baja"; break;
+        case 2:
+            mensaje = "velocidad media"; break;
+        case "2":
+            mensaje = "velocidad media"; break;
+        default:
+            mensaje = "el nivel no existe"; break;
+    }
+    return mensaje;
+}
+console.log(`La velocidad del ventilador está en ${setVelocidadVentilador(1)}`); // baja
+console.log(`La velocidad del ventilador está en ${setVelocidadVentilador(8)}`); // no existe
+console.log(`La velocidad del ventilador está en ${setVelocidadVentilador(2)}`); // media
+console.log(`La velocidad del ventilador está en ${setVelocidadVentilador("2")}`); // media
+console.log(`La velocidad del ventilador está en ${setVelocidadVentilador()}`); // apagado
