@@ -116,5 +116,19 @@ console.log( vb && "Holi Crayoli"); // false
 console.log( NaN && "Holi Crayoli"); // NaN
 console.log( "false" && "Holi Crayoli"); // Holi Crayoli
 console.log( "" && "Activado"); // ""
+
 console.log( "Activado" && ""); // ""
 console.log( "activado" || papasFritas ); // arroja un valor vacío porque no está definido
+
+const person = {
+    name : "Leo",
+    lastname : "Ronaldo",
+    age : 25
+};
+
+console.log( `nombre: ${person.name}`);
+console.log( `nombre: ${person["name"]}`);
+
+const occupation = person.occupation || "Software Engineer";
+
+console.log(`Ocupación: ${occupation}`)
