@@ -206,4 +206,4 @@ function divEntero(num1, num2) {
     return {division, residuo};
 }
 
-console.log(`División ${divEntero(num1,num2).division}, residuo: ${divEntero(num1,num2).residuo}`)
+console.log(`División ${divEntero(num1,num2).division}, residuo: ${divEntero(num1,num2).residuo}`);
