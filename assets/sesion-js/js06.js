@@ -59,8 +59,22 @@ const newElement = () => {
     </ul>
     `;
 
-    const descriptionCh30 = document.getElementById("#descriptionCh30");
+    const descriptionCh30 = document.querySelector("#descriptionCh30");
     descriptionCh30.appendChild( newElement );
 }
 
 newElement();
+
+//----------------Cambiar el color del texto-------------
+//style color
+
+const changeColor = (color) => {
+    const descriptionCh30 = document.getElementById("descriptionCh30");
+    descriptionCh30.style.color = color; // cambio de color de fuente
+    descriptionCh30.style.border = `thin solid ${color}`
+}
+
+changeColor("beige");
+
+//--------------- Propiedades de visualización------------
+// display
