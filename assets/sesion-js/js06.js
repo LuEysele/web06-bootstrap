@@ -9,7 +9,7 @@ const findElementById = () => {
     console.log(typeof title);
     console.log(title.innerHTML); // Sesión JS06
     //title.innerHTML = `Generation - Sesión JS 06`;
-    title.innerHTML = ` <span class="text-primary"> Generation </span> - Sesión JS 06 `;
+    title.innerHTML = ` <span id="generation" class="text-primary"> Generation </span> - Sesión JS 06 `;
 }
 
 findElementById();
@@ -77,4 +77,26 @@ const changeColor = (color) => {
 changeColor("beige");
 
 //--------------- Propiedades de visualización------------
-// display
+//                 Desaparecer el elemento
+// display: none (quitar el elemento del DOM)
+// visibility: hidden (ocultar el elemento)
+
+const getReferenceTitleGeneration = () =>{
+    return document.getElementById("generation");
+}
+
+const displayNoneElement = () =>{
+    const generation = getReferenceTitleGeneration();
+    generation.style.display = "none"; //quitar elemento
+}
+
+const hiddenElement = () =>{
+    const generation = getReferenceTitleGeneration();
+    generation.style.visibility = "hidden"; //ocultar elemento
+}
+
+const resetElement = () =>{
+    const generation = getReferenceTitleGeneration();
+    generation.style.visibility = "visible";
+    generation.style.display = "inline";
+}
