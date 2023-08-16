@@ -1,4 +1,4 @@
-console.log("Sesión JS07 - Promise");
+/* console.log("Sesión JS07 - Promise"); */
 /* 
  La promesa es un patrón asincrónico que se utiliza
  para manejar operaciones asíncronas.
@@ -22,7 +22,7 @@ console.log("Sesión JS07 - Promise");
 
 //const pinkyPromise = new Promise ( ()=>{} );
 //const pinkyPromise = new Promise((fncCallBackResolve, fncCallBackReject)=>{})
-const pinkyPromise = new Promise((fncCallBackResolve, fncCallBackReject)=>{
+/* const pinkyPromise = new Promise((fncCallBackResolve, fncCallBackReject)=>{
     const menorEdad = false;
 
     if( menorEdad )
@@ -45,7 +45,7 @@ pinkyPromise
     .finally( ()=> console.log("Se ha terminado de resolver la promesa") ); // se ejecuta una función de callback 
                 //después de que la promesa fue resuelta o rechazada
 
-console.log("Después de consumir la promesa");
+console.log("Después de consumir la promesa"); */
 
 // haciendo una promesa con parámetros
 /**
@@ -53,7 +53,7 @@ console.log("Después de consumir la promesa");
  * El saludo se genera después de 5 segundos.
  * @param {string} name 
  */
-const gretting = (name) =>{
+/* const gretting = (name) =>{
     //const myPromise = new Promise(()=>{})
     const myPromise = new Promise((resolve, reject)=>{
         const firstChar = name.charAt(0).toLowerCase()
@@ -71,7 +71,7 @@ const gretting = (name) =>{
             reject({code :404, message: `No estoy disponible para ${name}`})
     }) ;
      return myPromise;
-}
+} */
 
 /* gretting("Ana")
     .then((response)=> console.log(response.code, response.message))
@@ -91,7 +91,7 @@ gretting("Eduardo")
 
 */
 
-async function grettingCh30 (name) {
+/* async function grettingCh30 (name) {
     console.log("--------Saludos a la bandita de la CH30 ---------");
     const result = await gretting(name);
     console.log( result );
@@ -113,4 +113,4 @@ const grettingAll = async () =>{
     
 }
 
-grettingAll();
+grettingAll(); */
