@@ -13,8 +13,9 @@ console.log("JS07 - API Fetch");
 
 */
 
-/* const urlFakeStore = "https://fakestoreapi.com/products";
+const urlFakeStore = "https://fakestoreapi.com/products";
 
+/*
 const getProducts =  ( url )=>{
 
     fetch( url )
@@ -30,7 +31,7 @@ const getProducts =  ( url )=>{
         .catch( (error)=> console.warn( error ) );
 }; */
 
-const getProducts = async ( url ) =>
+const getProducts = async ( url ) =>{
  try{
     const resolve = await fetch(url);
     const resolveJson = await resolve.json();
@@ -39,7 +40,7 @@ const getProducts = async ( url ) =>
  catch( error ){
     console.warn( error );
  };
-
+}
 
 
 getProducts( urlFakeStore );
