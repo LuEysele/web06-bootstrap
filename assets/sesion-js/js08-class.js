@@ -19,7 +19,7 @@ class Products{
         this.name = name;
         this.id = id;
         this.createAt = new Date().getTime();
-        console.log(`Producto ${this.name} se creó el ${new Date().toLocaleString()}`);
+        // console.log(`Producto ${this.name} se creó el ${new Date().toLocaleString()}`);
     }
     
     lifeSpan(){
@@ -35,8 +35,33 @@ function createProductsOfClassProducts(){
     products.push( new Products(2, "Palmolive"));
     products.push( new Products(3, "Coca-Cola"));
     products.push( new Products(4, "Cajeta Corona"));
+    products.push( new Products(5, "Chips"));
+    products.push( new Products(6, "Herdez Chícharos"));
+    products.push( new Products(7, "Salsa Valentina"));
+    products.push( new Products(7, "Sopa Nissin"));
 
-    console.table(products);
+    // console.table(products);
+    return products;
 }
 
-createProductsOfClassProducts();
+function lifeSpanProducts( products ){
+    // El método mao sobre un arreglo itera sobre cada elemento
+    //del srreglo y entrega un nuevo arreglo
+    const productsLifeSpan = products.map( product => `<li>${product.name} se creó hace ${product.lifeSpan()/100} s. </li>`)
+    return productsLifeSpan;
+}
+
+function insertListItems( listItems ){
+    const products = document.getElementById("products");
+
+    let unorderList = `<ul>${listItems.join("")}</ul>`
+
+    products.innerHTML = unorderList;
+}
+function onClickLifeSpan(){
+    const products = createProductsOfClassProducts()
+    setTimeout(()=> {
+        const productsListItem = lifeSpanProducts(products);
+        insertListItems( productsListItem );
+}, 5000)
+}
