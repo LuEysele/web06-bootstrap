@@ -17,9 +17,20 @@ registerForm.addEventListener( "submit", ( event )=>{
 }  );
 
 const postUser = async ( userData) =>{
-    const url = "https://regres.in/api/register";
+    const url = "https://reqres.in/api/register";
+    userData.email = "eve.holt@reqres.in";
 
-    const response = await fetch( url, {} )
-    method: "POST", // POST, PUT, DELETE, GET
-    body: JSON.stringify(userData), //datos del usuario
+
+    const responseJSON = await fetch( url, { 
+        method: "POST", // POST, PUT, DELETE, GET
+        body: JSON.stringify(userData), //datos del usuario
+        headers: {"Content-Type" : "application/json"},    
+});
+    const response = await responseJSON.json() // convertir de JSON a Object de JS
+    response.id && alert(`${response.id}: ${response.token}`);
+
+    //iterar sobre un objeto
+    for (const key in response) {
+        console.log(`clave: ${key}, value: ${response[key]}`)
+    }
 }
